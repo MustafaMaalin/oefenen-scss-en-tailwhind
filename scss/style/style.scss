@@ -1,0 +1,72 @@
+@import "color";
+
+$myColor: red;
+$myFont: Helvetica;
+$myFontSize: 40px;
+
+h1 {
+  font: {
+    family: Arial;
+    size: 45px;
+    weight: bold;
+  }
+  text: {
+    align: center;
+    transform: lowercase;
+    overflow: hidden;
+  }
+  
+}
+
+p {
+  font: {
+    family: Verdana;
+    size: 35px;
+    weight: Italic;
+  }
+  text: {
+    align: center;
+    transform: lowercase;
+    overflow: hidden;
+  }
+  // font-family: $myFont;
+  // font-size: $myFontSize;
+}
+
+nav {
+  ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+  li {
+    display: inline-block;
+  }
+  a {
+    display: block;
+    padding: 6px 12px;
+    text-decoration: none;
+  }
+}
+
+@mixin dangerous-message {
+  color: red;
+  font-size: 50;
+  font-weight: bold italic;
+  border: 4px solid blue;
+}
+
+.danger{
+  @include dangerous-message;
+  background-color: green;
+}
+
+@mixin transform($property){
+  -webkit-transform: $property;
+  -ms-transform: $property;
+  transform: $property;
+}
+
+h1{
+  @include transform(rotate(30deg));
+}
