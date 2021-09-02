@@ -1,6 +1,6 @@
 @import "config";
-@import "utility";
-@import "buttons";
+
+
 
 * {
   box-sizing: border-box;
@@ -37,6 +37,9 @@ a {
     li {
       padding: 15px;
     }
+    a{
+      @include set-background($primary-color);
+    }
     a:hover {
       color: $secondary-color;
     }
@@ -48,6 +51,7 @@ a {
     display: flex;
     align-items: center;
     justify-content: center;
+    margin-top: 30px ;
   }
   img {
     width: 50%;
@@ -57,7 +61,10 @@ a {
     line-height: 1, 7;
   }
 
-  p {
-    margin: 20px 0;
-  }
+  // p {
+  //   margin: 20px 0;
+  // }
 }
+@import 'mobile';
+@import 'utility';
+@import 'buttons';
